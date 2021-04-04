@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import SomeComponent from './components/SomeComponent';
+import Validate from './components/Validate';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Validate number={1}>
+        <SomeComponent>
+          <Validate number={2} />
+        </SomeComponent>
+        <SomeComponent>
+          <Validate number={3} isValidate>
+            <Validate number={4} />
+          </Validate>
+        </SomeComponent>
+        <Validate number={5} />
+      </Validate>
     </div>
   );
 }
