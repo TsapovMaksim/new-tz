@@ -25,7 +25,9 @@ function Validate({ children, isValidate, number }) {
           children: renderChildren(child.props?.children, isNeedValidate),
         });
       } else if (React.isValidElement(child)) {
-        return renderChildren(child.props?.children, isNeedValidate);
+        return React.cloneElement(child, {
+          children: renderChildren(child.props?.children, isNeedValidate),
+        });
       } else {
         return child;
       }

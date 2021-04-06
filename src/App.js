@@ -5,12 +5,12 @@ import Validate from './components/Validate';
 function App() {
   return (
     <div className="App">
-      <Validate number={1}>
-        <SomeComponent>
+      <Validate number={1} isValidate>
+        <SomeComponent text={'First component'}>
           <Validate number={2} />
         </SomeComponent>
-        <SomeComponent>
-          <Validate number={3} isValidate>
+        <SomeComponent text={'Second component'}>
+          <Validate number={3}>
             <Validate number={4} />
           </Validate>
         </SomeComponent>
